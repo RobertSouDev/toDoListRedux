@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { toggleTodo } from '../slices/todoSlice'
+import { toggleTodo, removeTodo } from '../slices/todoSlice'
 
 const TodoList = () => {
     const {list, filter} = useSelector((state)=>  state.todos)
@@ -18,7 +18,7 @@ const TodoList = () => {
             list.map((todo)=> (
                 <li key={todo.id}>
                 <span onClick={()=> dispatch(toggleTodo(todo.id))} className={todo.completed? 'line-trough': null}> {todo.text}</span>
-                <button>Remover</button>
+                <button onClick={()=> dispatch(removeTodo(todo.id))}>Remover</button>
             </li>
             ))
         }
