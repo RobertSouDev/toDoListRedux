@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const AddTodo = () => {
-  return (
-    <div>
-      AddTodo
-    </div>
-  )
-}
+  return <form>
+    <input type="text" placeholder="Adione um tarefa..." />
+    <button type="submit">Enviar</button>
+    
+  </form>;
+};
 
-export default AddTodo
+export default AddTodo;
